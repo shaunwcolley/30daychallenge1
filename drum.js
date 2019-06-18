@@ -5,6 +5,7 @@ const playSound = (e) => {
   if(!audio) return; // stops function
   audio.currentTime = 0; //starts audio play over again
   audio.play();
+  if(!key) return;
   key.classList.add('playing');
 }
 
@@ -14,6 +15,8 @@ const removeTransition = (e) => {
 }
 
 const keys = document.querySelectorAll('.key');
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+keys.forEach(key => {
+  key.addEventListener('transitionend', removeTransition)
+});
 
 window.addEventListener('keydown', playSound);
