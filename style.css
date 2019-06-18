@@ -1,0 +1,8 @@
+.key {
+  transition: all .07s;
+}
+.playing {
+  transform: scale(1.1);
+  margin-left: 4rem;
+  color: blue;
+}
